@@ -3,7 +3,7 @@
 /**
  * Implementacion de un grafo dirigido usando listas de adyacencia
  *
- * @author Mauricio Toro, Mateo Agudelo, <su nombre>
+ * @author Mauricio Toro, Mateo Agudelo, Ricardo Saldarriaga, Benjamin de la Torre
  */
 import java.util.ArrayList;
 import java.util.LinkedList;
