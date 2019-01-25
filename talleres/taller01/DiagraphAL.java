@@ -19,8 +19,8 @@ public class DigraphAL extends Digraph {
 	public DigraphAL(int size) {
 		super(size);
 		lista = new LinkedList();
-    for (int i = 1; i <= size; i++)
-       lista.add(new LinkedList<Pair<Integer,Integer>>());
+    		for (int i = 1; i <= size; i++)
+       			lista.add(new LinkedList<Pair<Integer,Integer>>());
 	}
 
 	/**
@@ -45,11 +45,11 @@ public class DigraphAL extends Digraph {
 	*/
 	public ArrayList<Integer> getSuccessors(int vertex) {
 		 // Una nueva lista que saque los sucesores
-     ArrayList<Integer> respuesta = new ArrayList();
-     LinkedList<Pair<Integer,Integer>> listaDeParejas = lista.get(vertex);
-     for (Pair<Integer,Integer> pareja: listaDeParejas)
-       respuesta.add(pareja.getKey()); //segunda parte de la pareja
-     return respuesta;
+     		ArrayList<Integer> respuesta = new ArrayList();
+     		LinkedList<Pair<Integer,Integer>> listaDeParejas = lista.get(vertex);
+     		for (Pair<Integer,Integer> pareja: listaDeParejas)
+       			respuesta.add(pareja.getKey()); //segunda parte de la pareja
+     		return respuesta;
 	}
 
 	/**
@@ -60,14 +60,14 @@ public class DigraphAL extends Digraph {
 	* @return un entero con dicho peso
 	*/	
 	public int getWeight(int source, int destination) {
-    // Un ciclo que dentro de la lista source, cuando
-    //encuentre que sea el destino correcto, retorne el peso
-    int weight = 0;
-		LinkedList<Pair<Integer,Integer>> listaDeParejas = lista.get(source);
-    for (Pair<Integer,Integer> pareja: listaDeParejas)
-       if (pareja.getKey()==destination)
-       		weight = pareja.getValue();
-    return weight;
+	    // Un ciclo que dentro de la lista source, cuando
+	    //encuentre que sea el destino correcto, retorne el peso
+	    int weight = 0;
+	    LinkedList<Pair<Integer,Integer>> listaDeParejas = lista.get(source);
+	    for (Pair<Integer,Integer> pareja: listaDeParejas)
+	    	if (pareja.getKey()==destination)
+			weight = pareja.getValue();
+	    return weight;
 
 	}
 
