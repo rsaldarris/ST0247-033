@@ -15,7 +15,7 @@ public class DigraphAM extends Digraph {
 	*/
 	public DigraphAM(int size) {
 		super(size);
-    matriz = new int[size][size];
+    		matriz = new int[size][size];
 	} 
 
 	/**
@@ -39,13 +39,14 @@ public class DigraphAM extends Digraph {
  	* @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"> Ver documentacion ArrayList </a>
 	*/
 	public ArrayList<Integer> getSuccessors(int vertex) {
-    	ArrayList<Integer> respuesta = new ArrayList;
-    	int i = 0;
-	while (i < matriz[vertex].length;){
-        	if (matrix[vertex][i] != 0)
-         	 respuesta.add(i);
-    	}
-    	return respuesta;
+		ArrayList<Integer> respuesta = new ArrayList;
+		int i = 0;
+		while (i < matriz[vertex].length;){
+			if (matrix[vertex][i] != 0){
+				respuesta.add(i);
+			}
+		}
+		return respuesta;
 	}
 
 	/**
