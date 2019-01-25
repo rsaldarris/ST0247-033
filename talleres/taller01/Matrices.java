@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Implementacion de un grafo dirigido usando matrices de adyacencia
  *
- * @author Mauricio Toro, Mateo Agudelo, Ricardo Saldarriaga, Benjamin
+ * @author Mauricio Toro, Mateo Agudelo, Ricardo Saldarriaga, Benjamin de la Torre
  */
 public class DigraphAM extends Digraph {
 	
@@ -39,13 +39,13 @@ public class DigraphAM extends Digraph {
  	* @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"> Ver documentacion ArrayList </a>
 	*/
 	public ArrayList<Integer> getSuccessors(int vertex) {
-    ArrayList<Integer> respuesta = new ArrayList;
-    int i = 0;
-		while (i < matriz[vertex].length;){
-        if (matrix[vertex][i] != 0)
-          respuesta.add(i);
-    }
-    return respuesta;
+    	ArrayList<Integer> respuesta = new ArrayList;
+    	int i = 0;
+	while (i < matriz[vertex].length;){
+        	if (matrix[vertex][i] != 0)
+         	 respuesta.add(i);
+    	}
+    	return respuesta;
 	}
 
 	/**
