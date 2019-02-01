@@ -54,7 +54,7 @@ public class Taller2 {
 		    AdvancedEncryptionStandard.desencriptarArchivo(respuesta);
 		else {
 		   for (int i = 0; i < pregunta.length(); i++)
-		     permutacionesAux(respuesta+pregunta.charAt(i), pregunta.substring(0,i)+pregunta.substring(i+1));
+		     permutacionesPermutacion(respuesta+pregunta.charAt(i), pregunta.substring(0,i)+pregunta.substring(i+1));
 		}
 	}
 	
