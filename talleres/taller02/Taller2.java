@@ -32,26 +32,21 @@ public class Taller2 {
            subconjuntosAux(respuesta, pregunta.substring(1));
            subconjuntosAux(respuesta+pregunta.substring(0,1), pregunta.substring(1));
         } 
-    }
-
-	/**
-	* Metodo auxiliar que llama al metodo permutations posterios
-	* 
-	* @param  s cadena sobre las cuales se van a hacer las permutaciones
-	*/	
-	public static void permutaciones(String s) {
-        	permutacionesAux("",s);
-    	}
+	}
 	
 	/**
 	* Metodo que permite desencriptar el archivo archivoEncriptado.txt
-	
+
 	*/
 	public static void desencriptar(String respuesta){
 		desencriptarPermutacion("",respuesta);
 	}
 	
 	/**
+	* Metodo auxiliar para desencriptar el archivo encriptado con la ayuda de la clase AdvancedEncryptionStandard
+	*
+	* @param pregunta es la cadena sobre la cual se van a hacer las permutaciones
+	* @param respuesta es la cadena en la cual van a estar las posibles permutaciones
 	*/
 	
 	public static void desencriptarPermutacion(String respuesta,String pregunta){
@@ -62,6 +57,16 @@ public class Taller2 {
 		     permutacionesAux(respuesta+pregunta.charAt(i), pregunta.substring(0,i)+pregunta.substring(i+1));
 		}
 	}
+	
+	/**
+	* Metodo auxiliar que llama al metodo permutations posterios
+	* 
+	* @param  s cadena sobre las cuales se van a hacer las permutaciones
+	*/	
+	public static void permutaciones(String s) {
+        	permutacionesAux("",s);
+    	}
+	
 	/**
 	* Metodo para obtener las posibles permutaciones que se pueden hacer
 	* con los caracteres de una cadena dada, recuerde que las letras no se 
