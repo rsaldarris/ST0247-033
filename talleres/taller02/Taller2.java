@@ -10,52 +10,78 @@ public class Taller2 {
 	/**
 	* Metodo auxiliar que llama al metodo combinations posterios
 	* 
-	* @param  list el conjunto sobre el cual se haran las combinaciones
+	* @param s es la cadena sobre la cual se haran las combinaciones
 	
 	*/	
-	public static void combinations(ArrayList list) {
-		
-	}
+	public static void subconjuntos(String s) {
+        subconjuntosAux("",s);
+    }
 
 	/**
 	* Metodo para obtener las posibles combinaciones que se pueden hacer
 	* con los elementos dados
 	* 
-	* @param  index lleva la posicion para recorrer el conjunto 
-	* @param list el conjunto que tiene todas las combinaciones
-	* @param s la cadena actual
+	* @param pregunta es la cadena sobre la cual se van a hacer las combinaciones
+	* @param respuesta es la cadena en la cual van a estar las posibles combinaciones
 	* 
 	*/	
-	private static void combinations(String s, int index, ArrayList<String> list) {
-		
-	}
+	public static void subconjuntosAux(String respuesta, String pregunta){
+        if (pregunta.length() == 0)
+            System.out.println(respuesta);
+        else {
+           subconjuntosAux(respuesta, pregunta.substring(1));
+           subconjuntosAux(respuesta+pregunta.substring(0,1), pregunta.substring(1));
+        } 
+    }
 
 	/**
 	* Metodo auxiliar que llama al metodo permutations posterios
 	* 
-	* @param  s la cadena a la cual se le haran las permutaciones
-	* @return un ArrayList que contiene las permutaciones
+	* @param  s cadena sobre las cuales se van a hacer las permutaciones
 	*/	
-	public static ArrayList<String> permutations(String s) {
-		
+	public static void permutaciones(String s) {
+        	permutacionesAux("",s);
+    	}
+	
+	/**
+	* Metodo que permite desencriptar el archivo archivoEncriptado.txt
+	
+	*/
+	public static void desencriptar(String respuesta){
+		desencriptarPermutacion("",respuesta);
 	}
-
+	
+	/**
+	*/
+	
+	public static void desencriptarPermutacion(String respuesta,String pregunta){
+		if (pregunta.length() == 0) 
+		    AdvancedEncryptionStandard.desencriptarArchivo(respuesta);
+		else {
+		   for (int i = 0; i < pregunta.length(); i++)
+		     permutacionesAux(respuesta+pregunta.charAt(i), pregunta.substring(0,i)+pregunta.substring(i+1));
+		}
+	}
 	/**
 	* Metodo para obtener las posibles permutaciones que se pueden hacer
 	* con los caracteres de una cadena dada, recuerde que las letras no se 
 	* repiten en este ejercicio
 	* 
-	* @param  pre parte de la cadena que empieza desde 0 a i
-	* @param pos parte de cadena que empieza desde i a n
-	* @param list el conjunto que tiene todas las permutaciones
+	* @param pregunta es la cadena sobre la cual se van a hacer las permutaciones
+	* @param respuesta es la cadena en la cual van a estar las posibles permutaciones
 	* 
 	*/	
-	private static void permutations(String pre, String pos, ArrayList<String> list) {
-		
-	}
+	public static void permutacionesAux(String respuesta, String pregunta){
+		if (pregunta.length() == 0) 
+		    System.out.println(respuesta);
+		else {
+		   for (int i = 0; i < pregunta.length(); i++)
+		     permutacionesAux(respuesta+pregunta.charAt(i), pregunta.substring(0,i)+pregunta.substring(i+1));
+		} 
+    	}
 
 	/**
-	* Metodoque imprime en pantalla como esta el tablero dado
+	* Metodo que imprime en pantalla como esta el tablero dado
 	* 
 	* @param  tablero es un arreglo con las posiciones de un tablero
 	* de ajedrez
