@@ -16,7 +16,7 @@ import javafx.util.Pair;
 
 /**
  *
- * @author Ricardo Saldarriaga
+ * @author Ricardo Saldarriaga, Carlos Daniel Mesa, Benjamin de la Torre
  */
 public class Laboratorio1 {
     static HashMap<Pair<Long, String> , LinkedList< Pair <Long,Double> > > mapa = new HashMap();
