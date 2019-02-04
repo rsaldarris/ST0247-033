@@ -59,7 +59,7 @@ public class Laboratorio1 {
         int tabla=0,info=0;
         
         try  {
-            BufferedReader b = new BufferedReader(new FileReader("index.txt"));
+            BufferedReader b = new BufferedReader(new FileReader("medellin_colombia-grande.txt"));
             while((cadena = b.readLine())!=null) {
                 t=new StringTokenizer(cadena," ");
                 String nombre="";
