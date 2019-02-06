@@ -18,7 +18,12 @@ public class Taller3 {
 	* @return true si es posible, false de lo contrario
 	*/	
 	private static boolean puedoPonerReina(int r, int c, int[] tablero) {
-		
+            	for(int j=0;j<tablero.length;j++){
+                	if(Math.abs(r-c) == Math.abs(c-tablero[c])||tablero[j]==r||tablero[c]!=null){
+                		return false;
+               		}	
+            	}
+		return true;	
 	}
 	
 	/**
