@@ -39,12 +39,11 @@ public class Taller3 {
 	/**
 	* Metodo devuelve el numero de soluciones que tiene el problema
 	* 
-	* @param  r fila
-	* @param  n numero de reinas
+	* @param  c fila
 	* @return numero de soluciones
 	*/	
-	private static int nReinas(int r, int n, int[] tablero) {
-	
+	private static int nReinas(int c, int[] tablero) {
+		
 	}
 	
 	public static void imprimirTablero(int[] tablero) {
