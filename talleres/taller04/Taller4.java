@@ -28,8 +28,21 @@ public class Taller4 {
 	* o no visitados
 	* @return true si hay camino, false de lo contrario
 	*/
-    private static boolean hayCaminoDFS(Digraph g, int v, int w, boolean[] visitados) {
-       		
+  private static boolean hayCaminoDFS(Digraph g, int v, int w, boolean[] visitados) {
+          visitados[v] = true;
+          if (v == w)
+             return true;
+          else{
+              ArrayList<Integer> adyacentes = g.getSucessors(v);
+              for (Integer adyacente: adyacentes){
+                if (!visitados[adyacente]){
+                     boolean respuesta = hayCaminoDFS(g, adyacente, w, visitados);
+                     if (respuesta)
+                      return respuesta
+                  }
+              }
+              return false;   
+            }
     }
 
     /**
@@ -41,8 +54,11 @@ public class Taller4 {
 	* @return cual es el costo que tiene ir desde inicio a fin
 	*/
 	public static int costoMinimo(Digraph g, int inicio, int fin) {
-		
+		int[] costo = new int[g.size()];
+		recorrido(g, inicio, costo)
+		return costo[fin];
 	}
+	
 
 	/**
 	* Metodo auxiliar que llama al metodo recorrido posterior
@@ -51,8 +67,12 @@ public class Taller4 {
 	* @return cual es el costo que tiene
 	*/
 	public static int recorrido(Digraph g) {
-		
+		ArrayList<> costo = new ArrayList<>();
+		boolean[] visitados = new boolean[g.size()];
+		return hayCaminoDFS(g, v, w, visitados,costo);
 	}
+	
+	 
 
 	/**
 	* Metodo que recorre todo el grafo con la intencion de buscar un
@@ -63,8 +83,15 @@ public class Taller4 {
 	* @param unvisited arreglo de nodos aun no visitados
 	* @return cual es el costo que tiene
 	*/
-	private static int recorrido(Digraph g, int v, int[] unvisited) {
-		
+	private static void recorrido(Digraph g, int y, int[] costo) {
+		ArrayList<Integer> adyacentes = g.getSucessors(v);
+		for(Integer adyacente: adyacentes){
+			int cos=costo[y]+g.getWeigth(y,adyacente);
+			if(costo[adyacente]>cos){
+				costo[adyacente]=cos;
+			}
+			recorrido(g,adyacente,costo)
+		}
 	}
 
 
