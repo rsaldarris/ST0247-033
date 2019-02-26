@@ -16,7 +16,9 @@ public class Taller5 {
 	* @return true si es posible, false de lo contrario
 	*/
 	public static boolean mColoring(Digraph g, int m) {
-		
+	int nodos=g.size;
+	int[] colors = new int[nodos];
+	boolean sePuede=mColoring(g,0,colors,m);
 	}
 
 	/**
