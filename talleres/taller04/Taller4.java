@@ -59,18 +59,6 @@ public class Taller4 {
 		return costo[fin];
 	}
 	
-
-	/**
-	* Metodo auxiliar que llama al metodo recorrido posterior
-	* con cada uno de los vertices
-	* @param g grafo dado 
-	* @return cual es el costo que tiene
-	*/
-	public static int recorrido(Digraph g) {
-		ArrayList<> costo = new ArrayList<>();
-		boolean[] visitados = new boolean[g.size()];
-		return hayCaminoDFS(g, v, w, visitados,costo);
-	}
 	
 	 
 
