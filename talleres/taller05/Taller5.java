@@ -18,9 +18,18 @@ public class Taller5 {
 	public static boolean mColoring(Digraph g, int m) {
 	int nodos=g.size;
 	int[] colors = new int[nodos];
+	posibleColor(g,m);
 	boolean sePuede=mColoring(g,0,colors,m);
 	}
 
+	
+	private static boolean posibleColor(Diagraph g,int m){
+		for(int m = 0;m<g.size<m++){
+			ArrayList<Integer> s=g.getSuccesors(m);
+			int sucesores = s.size();
+			if(sucesores){}
+		}
+	}
 	/**
 	* Metodo que dado un grafo y un vertice v, intenta asignar un color
 	* al nodo, de manera que dos nodos adyacentes no poseean el mismo color
@@ -30,8 +39,38 @@ public class Taller5 {
 	* @param colors conjunto de colores
 	* @return true si es posible, false de lo contrario
 	*/
-	private static boolean mColoring(Digraph g, int v, int[] colors, int m) {
-		
+	private static boolean mColoring(Digraph g, int v, int[] colors, int m) {	
+		ArrayList<Integer> vecinos = g.getSucessors(v);
+		for(int s=0;s<vecinos.size;s++){
+			int veci=vecinos.get(s);
+			for(int i=1;i<=m;i++){
+				if(siguientePuede(g,veci,i,colors)){
+					colors[vecir]=i;
+					mColoring(g,veci,colors,m);
+				}
+			}
+		}
+		int numColors=0;
+		for(int s=0;s<colors.length;s++){
+			if(colors[s]==0){
+				break;
+			}
+			numColors++;
+		}
+		if(numColors==colors.length){
+			return true;
+		}
+		return false;
+	}
+	
+	private static boolean siguientePuede(Diagraph g,int v, int color,int[] colors){
+		ArrayList<Integer> proximos=g.getSucessors(v);
+		for(int s=0;s<proximos.size;s++){
+			if(colors[proximos.get(s)]==color){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
