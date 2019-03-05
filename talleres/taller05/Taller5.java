@@ -21,15 +21,6 @@ public class Taller5 {
 	posibleColor(g,m);
 	boolean sePuede=mColoring(g,0,colors,m);
 	}
-
-	
-	private static boolean posibleColor(Diagraph g,int m){
-		for(int m = 0;m<g.size<m++){
-			ArrayList<Integer> s=g.getSuccesors(m);
-			int sucesores = s.size();
-			if(sucesores){}
-		}
-	}
 	/**
 	* Metodo que dado un grafo y un vertice v, intenta asignar un color
 	* al nodo, de manera que dos nodos adyacentes no poseean el mismo color
@@ -39,16 +30,27 @@ public class Taller5 {
 	* @param colors conjunto de colores
 	* @return true si es posible, false de lo contrario
 	*/
-	private static boolean mColoring(Digraph g, int v, int[] colors, int m) {	
+	private static boolean mColoring(Digraph g, int v, int[] colors, int m) {
+		int ayuda=0;
 		ArrayList<Integer> vecinos = g.getSucessors(v);
 		for(int s=0;s<vecinos.size;s++){
 			int veci=vecinos.get(s);
 			for(int i=1;i<=m;i++){
-				if(siguientePuede(g,veci,i,colors)){
-					colors[vecir]=i;
-					mColoring(g,veci,colors,m);
+				if(colors[veci]==0){
+					if(siguientePuede(g,veci,i,colors)){
+						colors[vecir]=i;
+						if(!mColoring(g,veci,colors,m)){
+							colors[vecir]=0;
+						}
+					}
+				}else{
+					ayuda++;
 				}
 			}
+		}
+		if(ayuda==vecinos.size){
+			int veci=vecinos.get(0);
+			mColoring(g,veci,colors,m);	
 		}
 		int numColors=0;
 		for(int s=0;s<colors.length;s++){
@@ -72,20 +74,6 @@ public class Taller5 {
 		}
 		return true;
 	}
-
-	/**
-	* Metodo que dado un grafo y un vertice v, intenta asignar un color colors en la 
-	* posicion c al nodo v, de manera que dos nodos adyacentes no poseean el mismo color
-	* @param g grafo dado 
-	* @param c indice de colores
-	* @param v vertice 
-	* @param colors conjunto de colores
-	* @return true si es posible, false de lo contrario
-	*/
-	private static boolean isSafe(Digraph g, int v, int[] colors, int c) {
-		
-	}
-
 	
 
 }
