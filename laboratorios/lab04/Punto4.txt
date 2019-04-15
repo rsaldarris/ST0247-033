@@ -1,0 +1,17 @@
+Laboratorio #4
+Ricardo Saldarriaga Serna
+Carlos Daniel Mesa
+Benjamin de la Torre
+
+4.1)
+i=j;
+4.2)
+Min>adjencyMatrix[element][i]
+4.4)
+Temp=temp+(a%2)+(b%2)+(c%2)
+Return temp-1;
+O(1)
+4.6
+i+1
+res=res+1
+i
